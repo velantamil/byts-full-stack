@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop watch</title>
+</head>
+<body>
+    <h1>Stop watch</h1>
+    <br>
+    <button onclick="strt()">start</button>
+    <button onclick="stop()">stop</button>
+    <button onclick="rst()">reset</button>
+    <p id="result"></p>
+    <!-- <script src="./script1.js"> </script> -->
+     <script>
+        var a=0;
+        var startid = null;
+        function strt() {
+            if (startid !== null) return;
+            startid = setInterval(() => {
+                a += 1;
+                document.getElementById('result').textContent = "Time now is " + a;
+            }, 1000);
+        }
+        function stop() {
+            clearInterval(startid);
+            startid = null;
+        }
+        function rst() {
+            a = 0;
+            document.getElementById('result').textContent = "Time now is " + a;
+            clearInterval(startid);
+            startid = null;
+        }
+     </script>
+</body>
+</html>

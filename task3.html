@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Celsius to Fahrenheit Converter</title>
+</head>
+<body>
+  <h2>Celsius to Fahrenheit Converter</h2>
+  <label for="celsius">Celsius:</label>
+  <input type="number" id="celsius" />
+  <button onclick="convert()">Convert</button>
+  <p id="result"></p>
+  <script>
+    function convert() {
+      const celsius=parseFloat(document.getElementById('celsius').value);
+      if (isNaN(celsius)) {
+        document.getElementById('result').textContent = 'Please enter a valid number.';
+        return;
+      }
+      const fahrenheit = (celsius * 9/5) + 32;
+      document.getElementById('result').textContent = "Fahrenheit = "+ fahrenheit;
+    }
+  </script>
+</body>
+</html>
